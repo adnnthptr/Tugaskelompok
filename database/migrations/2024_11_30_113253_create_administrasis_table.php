@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('administrasis', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal');
+            $table->string('pelanggan_id');
+            $table->string('manager_id');
             $table->timestamps();
         });
     }
