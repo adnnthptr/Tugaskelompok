@@ -11,7 +11,9 @@ class ManagerController extends Controller
      */
     public function index()
     {
-        //
+        $data['Manager'] = \App\Models\Manager::all();
+        $data['Judul'] = 'Data-data manager';
+        return view('manager_index',$data);
     }
 
     /**
