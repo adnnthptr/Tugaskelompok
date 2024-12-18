@@ -22,5 +22,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::middleware('auth')->group(function () {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('Manager', ManagerController::class);
+
+Route::resource('manager', ManagerController::class);
+Route::get('/manager/move-phone-to-task', [ManagerController::class, 'movePhoneToTask'])->name('manager.movePhoneToTask');
+Route::get('manager/laporan/cetak', [ManagerController::class, 'laporan']);
+});
