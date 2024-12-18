@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\PelangganController;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +29,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('manager', ManagerController::class);
 Route::get('/manager/move-phone-to-task', [ManagerController::class, 'movePhoneToTask'])->name('manager.movePhoneToTask');
 Route::get('manager/laporan/cetak', [ManagerController::class, 'laporan']);
+
+Route::resource('pelanggan', PelangganController::class);
 });
